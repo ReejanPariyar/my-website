@@ -6,15 +6,15 @@
 
 /* ── SITE CONFIG ── */
 const CONFIG = {
-  email:        "hello@reejanpariyar.com",       // ← your real email
+  email:        "reejan.pariyar.official@gmail.com",
   linkedin:     "https://linkedin.com/in/reejanpariyar",
   github:       "https://github.com/ReejanPariyar",
-  instagram:    "https://instagram.com/",        // ← your handle
-  facebook:     "https://facebook.com/",         // ← your profile
-  whatsapp:     "https://wa.me/44",              // ← +44 then your number, no spaces
-  cv:           "assets/docs/reejan-pariyar-cv.pdf",
+  instagram:    "https://www.instagram.com/reejan.pariyar/",
+  facebook:     "https://facebook.com/",              // ← add your FB profile URL
+  whatsapp:     "https://wa.me/447867507526",
+  cv:           "assets/reejan-pariyar-cv.pdf",
   domain:       "reejanpariyar.q.uk",
-  formEndpoint: ""                               // paste Formspree URL here to use AJAX
+  formEndpoint: ""                                    // paste Formspree URL here to use AJAX
 };
 
 /* ── PROJECTS ── */
