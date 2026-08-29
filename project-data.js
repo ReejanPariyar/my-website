@@ -12,7 +12,7 @@ const CONFIG = {
   instagram:    "https://www.instagram.com/reejan.pariyar/",
   facebook:     "https://facebook.com/",              // ← add your FB profile URL
   whatsapp:     "https://wa.me/447867507526",
-  cv:           "assets/reejan-pariyar-cv.pdf",
+  cv:           "reejan-pariyar-cv.pdf",
   domain:       "reejanpariyar.q.uk",
   formEndpoint: ""                                    // paste Formspree URL here to use AJAX
 };
