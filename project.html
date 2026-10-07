@@ -71,7 +71,7 @@ h3.sub{font-family:var(--display);font-size:clamp(18px,2.4vw,26px);text-transfor
 
 /* hero section */
 .project-hero{background:var(--orange);border-radius:var(--r-lg);overflow:hidden;position:relative;margin-bottom:var(--pad)}
-.project-hero img{width:100%;aspect-ratio:21/8;object-fit:cover;display:block}
+.project-hero img{width:100%;max-height:420px;object-fit:contain;object-position:center;background:var(--soft);display:block}
 .project-hero__ph{aspect-ratio:21/8;display:grid;place-items:center;color:rgba(255,255,255,.6);font-family:var(--display);font-size:16px;letter-spacing:.14em;text-transform:uppercase}
 .project-hero__overlay{position:absolute;inset:0;background:linear-gradient(to right,rgba(0,0,0,.55) 0%,transparent 60%);padding:clamp(24px,4vw,52px);display:flex;flex-direction:column;justify-content:flex-end}
 .project-hero__num{font-family:var(--mono);font-size:11px;letter-spacing:.24em;text-transform:uppercase;color:rgba(255,255,255,.7);margin-bottom:8px}
@@ -98,10 +98,9 @@ h3.sub{font-family:var(--display);font-size:clamp(18px,2.4vw,26px);text-transfor
 
 /* ── GALLERY ── */
 .gallery-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:10px}
-.gal-item{border-radius:var(--r-sm);overflow:hidden;cursor:pointer;aspect-ratio:4/3;background:var(--soft);position:relative;transition:transform .22s,box-shadow .22s}
-.gal-item:hover{transform:scale(1.03);box-shadow:0 12px 36px rgba(0,0,0,.22)}
-.gal-item img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .3s}
-.gal-item:hover img{transform:scale(1.06)}
+.gal-item{border-radius:var(--r-sm);overflow:hidden;cursor:pointer;background:var(--soft);position:relative;transition:transform .22s,box-shadow .22s}
+.gal-item:hover{transform:scale(1.02);box-shadow:0 12px 36px rgba(0,0,0,.18)}
+.gal-item img{width:100%;height:auto;object-fit:contain;display:block}
 .gal-item__cap{position:absolute;bottom:0;left:0;right:0;padding:10px 12px;background:linear-gradient(transparent,rgba(0,0,0,.75));font-family:var(--mono);font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:#fff;opacity:0;transition:.22s}
 .gal-item:hover .gal-item__cap{opacity:1}
 .gal-item__ph{position:absolute;inset:0;display:grid;place-items:center;font-family:var(--mono);font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
@@ -121,12 +120,7 @@ h3.sub{font-family:var(--display);font-size:clamp(18px,2.4vw,26px);text-transfor
 .lb-prev svg,.lb-next svg{width:20px;height:20px;fill:none;stroke:#fff;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
 .lb-counter{font-family:var(--mono);font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:rgba(255,255,255,.5)}
 
-/* ── VIDEOS ── */
-.video-list{display:flex;flex-direction:column;gap:var(--pad)}
-.vid-card{background:var(--soft);border-radius:var(--r-md);overflow:hidden}
-.vid-card__title{font-family:var(--mono);font-size:11px;letter-spacing:.16em;text-transform:uppercase;padding:14px 18px;color:var(--muted)}
-.vid-card video,.vid-card iframe{width:100%;display:block;aspect-ratio:16/9;background:#000}
-.vid-card iframe{border:0}
+/* videos removed — GitHub links used instead */
 
 /* ── PROJECT TIMELINE ── */
 .pt-list{display:flex;flex-direction:column;gap:0;position:relative;padding-left:28px}
@@ -309,7 +303,7 @@ function buildPage(p){
   const heroEl=$('#docHero');
   if(p.heroImage){
     const img=document.createElement('img');
-    img.src=p.heroImage;img.alt=p.title;img.style.cssText='width:100%;aspect-ratio:21/8;object-fit:cover;display:block';
+    img.src=p.heroImage;img.alt=p.title;img.style.cssText='width:100%;max-height:420px;object-fit:contain;object-position:center;background:var(--soft);display:block';
     heroEl.insertBefore(img,$('#docHeroOverlay'));
     $('#docHeroPh').remove();
   }
@@ -369,17 +363,7 @@ function buildPage(p){
     sections.push(makeSection('gallery','Photos &amp; Screenshots','',`<div class="gallery-grid">${items}</div>`));
   }
 
-  /* videos */
-  if(p.videos&&p.videos.length){
-    tocItems.push({id:'videos',label:'Videos'});
-    const vids=p.videos.map(v=>{
-      const embed=v.type==='youtube'
-        ?`<iframe src="https://www.youtube-nocookie.com/embed/${esc(v.youtubeId)}" allow="accelerometer;autoplay;clipboard-write;encrypted-media;gyroscope;picture-in-picture" allowfullscreen title="${esc(v.title)}"></iframe>`
-        :`<video controls preload="metadata" ${v.poster?`poster="${esc(v.poster)}"`:''}><source src="${esc(v.src)}"><p style="padding:16px;color:var(--muted);font-family:var(--mono);font-size:12px">Video not available in your browser. <a href="${esc(v.src)}" style="color:var(--orange-hot)">Download it instead.</a></p></video>`;
-      return `<div class="vid-card"><div class="vid-card__title">${esc(v.title)}</div>${embed}</div>`;
-    }).join('');
-    sections.push(makeSection('videos','Videos','',`<div class="video-list">${vids}</div>`));
-  }
+  /* videos removed — GitHub links used instead */
 
   /* project timeline */
   if(p.projectTimeline&&p.projectTimeline.length){
