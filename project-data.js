@@ -27,7 +27,7 @@ const PROJECTS = [
     title: "Rudra Travels & Trek",
     tagline: "Real business website, built and hosted on AWS from scratch.",
     tags: ["AWS S3", "CloudFront", "Route 53", "HTML/CSS", "JavaScript"],
-    heroImage: "assets/images/rudra-hero.jpg",
+    heroImage: "assets/images/rudra-hero.png",
     summary: "My uncle runs a trekking agency in Kathmandu. He needed a website. I built one and put it on AWS — S3, CloudFront, Route 53. It's live at rudra-travels.com and people are actually using it.",
     liveUrl: "https://rudra-travels.com",
     repoUrl: "https://github.com/ReejanPariyar",  // ← update to the specific repo
@@ -82,7 +82,7 @@ const PROJECTS = [
     title: "Cloud Resume Challenge",
     tagline: "The full challenge — Terraform infrastructure, CI/CD pipeline, no console clicks.",
     tags: ["Terraform", "AWS Lambda", "DynamoDB", "CloudFront", "GitHub Actions", "Python"],
-    heroImage: "assets/images/crc-hero.jpg",
+    heroImage: "assets/images/crc-hero.png",
     summary: "The Cloud Resume Challenge completed end-to-end: static front end on CloudFront, visitor counter backed by Lambda and DynamoDB, full CI/CD pipeline via GitHub Actions, and the entire AWS environment defined in Terraform.",
     liveUrl: "https://d39rgsyhh5t880.cloudfront.net",
     repoUrl: "https://github.com/ReejanPariyar/cloud-resume-challenge",
